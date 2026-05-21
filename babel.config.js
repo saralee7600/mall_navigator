@@ -1,12 +1,16 @@
 module.exports = function (api) {
   api.cache(true);
-  let plugins = [];
-
-  plugins.push('react-native-worklets/plugin');
 
   return {
-    presets: [['babel-preset-expo', { jsxImportSource: 'nativewind' }], 'nativewind/babel'],
-
-    plugins,
+    // איחוד ה-Presets בצורה הסטנדרטית של NativeWind
+    presets: [
+      ['babel-preset-expo', { jsxImportSource: 'nativewind' }],
+      'nativewind/babel'
+    ],
+    plugins: [
+      'react-native-worklets/plugin',
+      // Reanimated must be listed last among plugins
+      'react-native-reanimated/plugin',
+    ],
   };
 };
