@@ -1,3 +1,4 @@
+import { InputGroup } from '@/src/components/InputGroup';
 import { Heading } from '@/src/components/ui/heading';
 import { Input } from '@/src/components/ui/input';
 import { Text } from '@/src/components/ui/text';
@@ -95,19 +96,11 @@ export default function HomeScreen() {
             </View>
 
             {/* Search */}
-            <View className="relative">
-              <View
-                className="absolute start-4 top-0 bottom-0 z-10 justify-center"
-                pointerEvents="none">
-                <Search size={20} color="#94a3b8" strokeWidth={2.25} />
-              </View>
-              <Input
-                placeholder="חפש חנות, מותג, או שירות..."
-                className="h-14 rounded-2xl border-border/80 bg-background ps-12 text-base shadow-md shadow-black/10 dark:shadow-black/25"
-                textAlign="right"
-                returnKeyType="search"
-              />
-            </View>
+            <InputGroup
+              placeholder="חפש חנות, מותג, או שירות..."
+              startIcon={<Search />}
+              returnKeyType="search"
+            />
 
             {/* Recent searches */}
             <View className="gap-3">

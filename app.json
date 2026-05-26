@@ -14,8 +14,20 @@
       "output": "static",
       "favicon": "./assets/favicon.png"
     },
+    "extra": {
+      "supportsRTL": true
+    },
     "plugins": [
       "expo-router",
+      [
+        "expo-localization",
+        {
+          "supportedLocales": {
+            "ios": ["en", "he"],
+            "android": ["en", "he"]
+          }
+        }
+      ],
       "expo-secure-store",
       [
         "@rnmapbox/maps",
@@ -48,5 +60,7 @@
         "backgroundColor": "#ffffff"
       }
     }
+    
+   
   }
 }
